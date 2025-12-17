@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: linear-gradient(90deg, #0b5ed7, #084298);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar ul li a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    min-height: 90vh;
+    background: linear-gradient(135deg, #0b5ed7, #4dabf7);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    margin-top: 30px;
+}
+
+.hero-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    background: white;
+    color: #0b5ed7;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons a.outline {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.hero-buttons a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 80px 40px;
+    background: #f8f9fa;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #0b5ed7;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #555;
+    line-height: 1.5;
+}
+
+.card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #0b5ed7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.content {
+    padding: 60px 40px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.content h2 {
+    color: #0b5ed7;
+    margin-bottom: 20px;
+}
+
+.content ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+
+@media (max-width: 768px) {
+    /* Navbar: horizontal scroll instead of stacking */
+    .navbar ul {
+        display: flex;
+        overflow-x: auto;
+        gap: 15px;
+        padding-bottom: 5px;
+    }
+    .navbar ul::-webkit-scrollbar {
+        display: none; /* hide scrollbar */
+    }
+
+    /* Hero: keep font readable but elegant */
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .hero-buttons a {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin: 5px;
+    }
+
+    /* Cards: use 2 columns on tablet / mobile landscape */
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 40px 20px;
+    }
+
+    .card {
+        padding: 20px;
+        font-size: 14px;
+    }
+
+    /* Content section: readable padding */
+    .content {
+        padding: 30px 15px;
+        font-size: 14px;
+    }
+}
