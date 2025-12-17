@@ -1,9 +1,11 @@
+/* ===== GLOBAL STYLES ===== */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: #f4f6f8;
 }
 
+/* ===== NAVBAR ===== */
 .navbar {
     position: sticky;
     top: 0;
@@ -39,6 +41,7 @@ body {
     text-decoration: underline;
 }
 
+/* ===== HERO SECTION ===== */
 .hero {
     min-height: 90vh;
     background: linear-gradient(135deg, #0b5ed7, #4dabf7);
@@ -86,6 +89,7 @@ body {
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
+/* ===== CARDS ===== */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -125,6 +129,7 @@ body {
     text-decoration: none;
 }
 
+/* ===== CONTENT SECTION ===== */
 .content {
     padding: 60px 40px;
     max-width: 900px;
@@ -141,48 +146,48 @@ body {
     padding-left: 20px;
 }
 
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 1024px) {
+    .hero h1 { font-size: 40px; }
+    .hero p { font-size: 16px; }
+    .hero-buttons a { padding: 12px 24px; font-size: 14px; }
+    .cards { padding: 60px 20px; gap: 25px; }
+    .card { padding: 25px; }
+    .content { padding: 50px 20px; }
+}
 
 @media (max-width: 768px) {
-    /* Navbar: horizontal scroll instead of stacking */
+    /* Navbar horizontal scroll */
     .navbar ul {
         display: flex;
         overflow-x: auto;
         gap: 15px;
         padding-bottom: 5px;
     }
-    .navbar ul::-webkit-scrollbar {
-        display: none; /* hide scrollbar */
-    }
+    .navbar ul::-webkit-scrollbar { display: none; }
 
-    /* Hero: keep font readable but elegant */
-    .hero h1 {
-        font-size: 36px;
-    }
-    .hero p {
-        font-size: 16px;
-        max-width: 100%;
-    }
-    .hero-buttons a {
-        padding: 12px 20px;
-        font-size: 14px;
-        margin: 5px;
-    }
+    /* Hero adjustments */
+    .hero h1 { font-size: 32px; }
+    .hero p { font-size: 15px; max-width: 100%; }
+    .hero-buttons a { width: 100%; margin: 8px 0; padding: 12px; }
 
-    /* Cards: use 2 columns on tablet / mobile landscape */
+    /* Cards: auto-fit smaller screens */
     .cards {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 20px;
-        padding: 40px 20px;
+        padding: 40px 15px;
     }
+    .card { padding: 20px; font-size: 14px; }
 
-    .card {
-        padding: 20px;
-        font-size: 14px;
-    }
+    /* Content section */
+    .content { padding: 40px 15px; font-size: 14px; }
+}
 
-    /* Content section: readable padding */
-    .content {
-        padding: 30px 15px;
-        font-size: 14px;
-    }
+@media (max-width: 480px) {
+    .hero h1 { font-size: 28px; }
+    .hero p { font-size: 14px; }
+    .hero-buttons a { font-size: 13px; padding: 10px; }
+    .cards { gap: 15px; padding: 30px 10px; }
+    .card { padding: 15px; font-size: 13px; }
+    .content { padding: 30px 10px; font-size: 13px; }
 }
